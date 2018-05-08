@@ -1,0 +1,27 @@
+logging:
+  level: INFO
+  loggers:
+    com.sample: DEBUG
+
+database:
+  driverClass: org.postgresql.Driver
+  url: jdbc:postgresql://localhost/unicorn-local-db
+  user: unicorn
+  password: unicorn
+  properties:
+    charSet: UTF-8
+  maxWaitForConnection: 1s
+  validationQuery: "SELECT 1"
+  validationQueryTimeout: 3s
+  # the minimum number of connections to keep open
+  minSize: 8
+  maxSize: 32
+  # whether or not idle connections should be validated
+  checkConnectionWhileIdle: false
+  # the amount of time to sleep between runs of the idle connection validation, abandoned cleaner and idle pool resizing
+  evictionInterval: 10s
+  # the minimum amount of time an connection must sit idle in the pool before it is eligible for eviction
+  minIdleTime: 1 minute
+  checkConnectionOnBorrow: true
+
+
